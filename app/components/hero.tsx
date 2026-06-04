@@ -15,9 +15,7 @@ export default function Hero() {
       />
 
       <div className="flex flex-col items-center gap-6 text-center animate-fade-in">
-        <p className="text-sm font-medium tracking-widest uppercase text-emerald-600 animate-slide-down">
-          Portfolio
-        </p>
+        <p className="text-sm font-medium tracking-widest uppercase text-emerald-600 animate-slide-down">Portfolio</p>
 
         <h1 className="text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
           Jolan
@@ -25,7 +23,9 @@ export default function Hero() {
         </h1>
 
         <p className="max-w-lg text-lg leading-relaxed text-slate-600">
-          Développeur fullstack, j’aime concevoir des solutions utiles et bien pensées. Curieux et motivé par les défis techniques, je m’adapte vite et cherche constamment à améliorer mes compétences pour offrir la meilleure expérience possible aux utilisateurs.
+          DevOps, j’aime concevoir des solutions utiles et bien pensées. Curieux et motivé par les défis techniques, je
+          m’adapte vite et cherche constamment à améliorer mes compétences pour offrir la meilleure expérience possible
+          aux utilisateurs.
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
@@ -45,7 +45,10 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 flex flex-col items-center gap-2 animate-fade-in" style={{ animationDelay: "1s" }}>
+      <div
+        className="absolute bottom-8 flex flex-col items-center gap-2 animate-fade-in"
+        style={{ animationDelay: "1s" }}
+      >
         <span className="text-xs font-medium text-slate-400">Scroller</span>
         <div className="size-5 animate-bounce rounded-full border-2 border-slate-300" />
       </div>
