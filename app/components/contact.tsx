@@ -1,12 +1,18 @@
+"use client";
+
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { useState } from "react";
+import { CiMail } from "react-icons/ci";
+import { IoCheckmark } from "react-icons/io5";
 
 export default function Contact() {
+  const [copied, setCopied] = useState(false);
   return (
     <section id="contact" className="relative isolate overflow-hidden px-6 py-24 sm:py-32">
       {/* Decorative blobs */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-40 -top-40 -z-10 size-[350px] rounded-full bg-emerald-200/30 blur-3xl"
+        className="pointer-events-none absolute -right-40 -top-40 -z-10 size-87.5 rounded-full bg-emerald-200/30 blur-3xl"
       />
 
       <div className="mx-auto max-w-lg">
@@ -14,25 +20,23 @@ export default function Contact() {
           <p className="text-sm font-medium tracking-widest uppercase text-emerald-600">Contact</p>
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Travaillons ensemble</h2>
           <p className="max-w-md text-slate-600">
-            Ce portfolio vous à plus ? N&apos;hésitez pas à me contacter, je serais ravi d&apos;en discuter.
+            Ce portfolio vous a plus ? N&apos;hésitez pas à me contacter, je serais ravi d&apos;en discuter.
           </p>
         </div>
 
         <div className="mt-12 flex flex-col items-center gap-6">
           {/* Email */}
-          <a
-            href="mailto:email@example.com"
-            className="group inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white px-8 py-4 text-slate-700 shadow-sm transition-all hover:border-emerald-400 hover:text-emerald-600 hover:shadow-lg hover:shadow-emerald-500/10"
+          <button
+            onClick={() => {
+              navigator.clipboard.writeText("jolan.cochet.pro@gmail.com");
+              setCopied(true);
+              setTimeout(() => setCopied(false), 2000);
+            }}
+            className="group inline-flex cursor-pointer items-center gap-3 rounded-full border border-slate-200 bg-white px-8 py-4 text-slate-700 shadow-sm transition-all hover:border-emerald-400 hover:text-emerald-600 hover:shadow-lg hover:shadow-emerald-500/10"
           >
-            <svg className="size-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
-              />
-            </svg>
-            <span className="text-sm font-medium">jolan.cochet.pro@gmail.com</span>
-          </a>
+            {copied ? <IoCheckmark className="stroke-emerald-600" /> : <CiMail />}
+            <span className="text-sm font-medium">{copied ? "Copié !" : "jolan.cochet.pro@gmail.com"}</span>
+          </button>
 
           {/* Social links */}
           <div className="flex items-center gap-4">
